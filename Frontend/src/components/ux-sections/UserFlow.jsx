@@ -30,12 +30,12 @@ const PALETTE = {
 
 // ─── Iconos por tipo de nodo ───────────────────────────────────────────────
 const TIPO_CONFIG = {
-  inicio:     { icon: '▶', label: 'Inicio',      bg: 'bg-slate-800 text-white',          shape: 'rounded-full' },
-  accion:     { icon: '▭', label: 'Pantalla',    bg: 'bg-white border-2 text-slate-800', shape: 'rounded-2xl' },
-  decision:   { icon: '◆', label: 'Decisión',    bg: 'bg-amber-400 text-white',          shape: 'rounded-xl rotate-0' },
-  error:      { icon: '⚠', label: 'Error',       bg: 'bg-rose-500 text-white',           shape: 'rounded-2xl' },
-  'fin-rama': { icon: '⤵', label: 'Converge',    bg: 'bg-slate-400 text-white',          shape: 'rounded-2xl' },
-  fin:        { icon: '⏹', label: 'Fin',         bg: 'bg-slate-900 text-white',          shape: 'rounded-full' },
+  inicio: { icon: '▶', label: 'Inicio', bg: 'bg-slate-800 text-white', shape: 'rounded-full' },
+  accion: { icon: '▭', label: 'Pantalla', bg: 'bg-white border-2 text-slate-800', shape: 'rounded-2xl' },
+  decision: { icon: '◆', label: 'Decisión', bg: 'bg-amber-400 text-white', shape: 'rounded-xl rotate-0' },
+  error: { icon: '⚠', label: 'Error', bg: 'bg-rose-500 text-white', shape: 'rounded-2xl' },
+  'fin-rama': { icon: '⤵', label: 'Converge', bg: 'bg-slate-400 text-white', shape: 'rounded-2xl' },
+  fin: { icon: '⏹', label: 'Fin', bg: 'bg-slate-900 text-white', shape: 'rounded-full' },
 };
 
 // ─── Nodo individual en el flujo ───────────────────────────────────────────
@@ -316,11 +316,24 @@ function ResumenFlujos({ flujos }) {
           🔗 Convergencia entre flujos
         </p>
         <p className="text-slate-300 text-sm leading-relaxed">
-          Ambos flujos están interconectados: si el usuario abre la app sin plan activo en el <span className="text-indigo-400 font-bold">User Flow A</span>, 
-          el sistema lo redirige automáticamente al <span className="text-violet-400 font-bold">User Flow B</span> para planificar. 
-          Del mismo modo, al finalizar la planificación en el <span className="text-violet-400 font-bold">User Flow B</span>, 
+          Ambos flujos están interconectados: si el usuario abre la app sin plan activo en el <span className="text-indigo-400 font-bold">User Flow A</span>,
+          el sistema lo redirige automáticamente al <span className="text-violet-400 font-bold">User Flow B</span> para planificar.
+          Del mismo modo, al finalizar la planificación en el <span className="text-violet-400 font-bold">User Flow B</span>,
           el sistema activa el Dashboard convergiendo con el <span className="text-indigo-400 font-bold">User Flow A</span> para la ejecución.
         </p>
+      </motion.div>
+
+      {/* Link a Figma-Fijgam */}
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
+        className="bg-slate-900 rounded-2xl p-6 shadow-2xl mt-6 flex items-center justify-center flex-col">
+        <h2 className="text-slate-300 text-sm leading-relaxed font-bold">
+          ¿Querés ver los flujos interactivos en FigJam?
+        </h2>
+        <button className="text-slate-300 text-sm leading-relaxed mt-4 bg-gray-500 rounded-lg px-4 py-2 hover:bg-gray-600 transition-colors">
+          <a href="https://www.figma.com/board/2YwZEev6HRdZgpjejGCtvh/Task-Flow---GA?node-id=0-1&t=bkrIJBSvsh67uEYf-1https://www.figma.com/board/7KZb0nS1O45sgDb9CSkhGW/User-Flow---GA?node-id=0-1&t=SR3xqHg2EI2pieXN-1" target="_blank" className="flex justify-center align-center">
+            <img src="/images/Icons/fijgam.png" alt="Logo de FigJam" className="w-10 pr-1" />User Flow FigJam
+          </a>
+        </button>
       </motion.div>
     </div>
   );

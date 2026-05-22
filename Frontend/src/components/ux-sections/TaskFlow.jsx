@@ -82,12 +82,11 @@ function Paso({ paso, index, palette, isLast, isActive, onClick }) {
         transition={{ delay: index * 0.07 }}
         onClick={onClick}
         className={`flex-1 mb-6 rounded-2xl border-2 p-5 cursor-pointer transition-all
-          ${
-            isActive
-              ? esUsuario
-                ? `${palette.stepUser} shadow-xl scale-[1.01]`
-                : `border-slate-300 bg-white shadow-xl scale-[1.01]`
-              : "bg-white border-slate-200 hover:border-slate-300 hover:shadow-md"
+          ${isActive
+            ? esUsuario
+              ? `${palette.stepUser} shadow-xl scale-[1.01]`
+              : `border-slate-300 bg-white shadow-xl scale-[1.01]`
+            : "bg-white border-slate-200 hover:border-slate-300 hover:shadow-md"
           }`}
       >
         {/* Header del paso */}
@@ -119,11 +118,10 @@ function Paso({ paso, index, palette, isLast, isActive, onClick }) {
           </span>
           <span
             className={`text-xs font-bold px-3 py-1 rounded-full border
-            ${
-              isActive && esUsuario
+            ${isActive && esUsuario
                 ? "bg-white/20 text-white border-white/30"
                 : `${palette.pantalla}`
-            }`}
+              }`}
           >
             {paso.pantalla}
           </span>
@@ -305,14 +303,19 @@ function ResumenComparativo({ flujos }) {
         );
       })}
 
-      {/* Link Task Flow en FigJam */}
-        <div className={`bg-indigo-100 rounded-xl border border-indigo-200 text-center`}>
-          <button className="text-2xl font-black text-slate-600 w-full h-full p-3">
-            <a href="https://www.figma.com/board/2YwZEev6HRdZgpjejGCtvh/Task-Flow---GA?node-id=0-1&t=bkrIJBSvsh67uEYf-1" target="_blank" className="flex justify-center align-center"> 
-              <img src="/images/Icons/figjam.png" alt="Logo de FigJam" className="w-10 pr-1"/>Task Flow FigJam
-            </a>
-          </button>
-        </div>
+
+      {/* Link a Figma-Fijgam */}
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
+        className="bg-slate-900 rounded-2xl p-6 shadow-2xl mt-6 flex items-center justify-center flex-col">
+        <h2 className="text-slate-300 text-sm leading-relaxed font-bold">
+          ¿Querés ver los flujos interactivos en FigJam?
+        </h2>
+        <button className="text-slate-300 text-sm leading-relaxed mt-4 bg-gray-500 rounded-lg px-4 py-2 hover:bg-gray-600 transition-colors">
+          <a href="https://www.figma.com/board/2YwZEev6HRdZgpjejGCtvh/Task-Flow---GA?node-id=0-1&t=bkrIJBSvsh67uEYf-1" target="_blank" className="flex justify-center align-center">
+            <img src="/images/Icons/fijgam.png" alt="Logo de FigJam" className="w-10 pr-1" />Task Flow FigJam
+          </a>
+        </button>
+      </motion.div>
     </div>
   );
 }
@@ -391,10 +394,9 @@ export default function TaskFlow() {
                 key={t.id}
                 onClick={() => setTab(t.id)}
                 className={`px-5 py-3 text-sm font-bold rounded-t-xl border-b-2 transition-all
-                  ${
-                    tab === t.id
-                      ? "border-indigo-600 text-indigo-600 bg-indigo-50"
-                      : "border-transparent text-slate-500 hover:text-slate-700"
+                  ${tab === t.id
+                    ? "border-indigo-600 text-indigo-600 bg-indigo-50"
+                    : "border-transparent text-slate-500 hover:text-slate-700"
                   }`}
               >
                 {t.label}

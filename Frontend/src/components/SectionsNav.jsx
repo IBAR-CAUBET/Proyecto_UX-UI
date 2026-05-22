@@ -6,17 +6,17 @@ const navItems = [
   { to: '/user-persona', label: '3. Persona', color: 'from-purple-500 to-purple-700' },
   { to: '/encuestas', label: '4. Encuestas', color: 'from-emerald-500 to-emerald-700' },
   { to: '/entrevistas', label: '5. Entrevistas', color: 'from-orange-500 to-orange-700' },
-  { to: '/mapa-empatia', label: '6. Empatía', color: 'from-pink-500 to-pink-700' },
+  { to: '/mapa-empatia', label: '6. Empatía', color: 'from-pink-500 to-pink-700' }, 
   { to: '/user-journey', label: '7. Journey', color: 'from-teal-500 to-teal-700' },
   { to: '/PointOfView', label: '8. POV', color: 'from-red-500 to-red-700' },
-  { to: '/storytelling', label: '9. Storytelling', color: 'from-violet-400 to-violet-500' },
+  { to: '/storytelling', label: '9. Storytelling', color: 'from-violet-500 to-violet-700' },
   { to: '/storyboard', label: '10. Storyboard', color: 'from-rose-500 to-rose-700' },
   { to: '/benchmarking', label: '11. Benchmarking', color: 'from-yellow-500 to-yellow-700' },
-  { to: '/cardsorting', label: '12. Cardsorting', color: 'from-gray-500 to-gray-800' },
-  { to: '/dendrograma&matriz', label: '13. Dendrograma & Matriz de Similitud', color: 'from-indigo-700 to-indigo-500' },
+  { to: '/cardsorting', label: '12. Cardsorting', color: 'from-gray-500 to-gray-700' },
+  { to: '/dendrograma&matriz', label: '13. Dendrograma & Matriz de Similitud', color: 'from-indigo-500 to-indigo-700' },
   { to: '/mapadesitio', label: '14. Mapa de sitio', color: 'from-teal-700 to-teal-600' },
   { to: '/taskflow', label: '15. Task Flow', color: 'from-emerald-900 to-emerald-800' },
-  { to: '/userflow', label: '16. User Flow', color: 'from-fuchsia-700 to-fuchsia-800' },
+  { to: '/userflow', label: '16. User Flow', color: 'from-fuchsia-500 to-fuchsia-600' },
 ];
 
 export default function SectionsNav() {
